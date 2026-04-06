@@ -1,4 +1,4 @@
-import { NotFoundError } from "@/domain/errors";
+import { InternalServerError, NotFoundError } from "@domain/errors";
 import { MotorInfoRepositoryI } from "../repository";
 
 export class FindOneByIdMotorInfoUseCase {
@@ -14,7 +14,7 @@ export class FindOneByIdMotorInfoUseCase {
             }
             return motorInfo;
         } catch (error: unknown) {
-            throw new Error((error as Error).message);
+            throw new InternalServerError((error as Error).message);
         }
     }
 }

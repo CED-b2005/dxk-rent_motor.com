@@ -8,7 +8,19 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 //  test motor info entity
-import { MotorInfoEntity } from './domain/motor_infos/entity';
+import { MotorInfoEntity } from '@domain/motor_infos/entity';
+const motorInfoEntity = new MotorInfoEntity(
+    'motor1',
+    'Motor 1',
+    'This is motor 1',
+    'electric',
+    100,
+    200,
+    300,
+    "http://example.com/motor1.jpg"
+);
+
+console.log(motorInfoEntity.toJSON());
 
 
 app.listen(port, () => {

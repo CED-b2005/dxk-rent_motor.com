@@ -7,6 +7,10 @@ app.get('/', (req: Request, res: Response) => {
     res.json({ message: 'Welcome to the Express + TypeScript Server!' });
 });
 
+//  test motor info entity
+import { MotorInfoEntity } from './domain/motor_infos/entity';
+
+
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });
